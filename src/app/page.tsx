@@ -6,7 +6,7 @@ const Home = () => {
     <main className="flex flex-col justify-center items-center text-center min-h-screen px-4">
       <BiSolidFoodMenu className="mx-auto mb-4 text-orange-600" size={60} />
       <h1 className="text-4xl md:text-5xl font-bold mb-4 text-blue-600">
-        Welcome to Meal Hub
+        Welcome to Meal Book
       </h1>
       <p className="text-lg text-gray-600 mb-8">
         An app for saving and viewing recipes
@@ -17,13 +17,13 @@ const Home = () => {
           href="/recipes/new"
           className="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700 transition"
         >
-          Signup
+          Create a Recipe
         </Link>
         <Link
           href="/recipes"
           className="bg-blue-100 text-gray px-6 py-3 rounded shadow hover:bg-blue-200 transition"
         >
-          Login
+          View Recipes
         </Link>
       </div>
     </main>
