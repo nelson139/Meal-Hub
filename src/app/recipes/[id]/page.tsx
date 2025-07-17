@@ -27,6 +27,16 @@ const RecipeDetailsPage = async (props: {
         </div>
 
         <div className="text-gray-700">
+          <h2 className="text-lg font-semibold mb-2">Ingredients</h2>
+          <p>{recipe.ingredients}</p>
+        </div>
+
+        <div className="text-gray-700">
+          <h2 className="text-lg font-semibold mb-2">Instructions</h2>
+          <p>{recipe.instructions}</p>
+        </div>
+
+        <div className="text-gray-700">
           <h2 className="text-lg font-semibold mb-2">Time Length</h2>
           <p className={getTimeLengthClass(recipe.timeLength)}>
             {recipe.timeLength}
@@ -38,12 +48,20 @@ const RecipeDetailsPage = async (props: {
           <p>{new Date(recipe.createdAt).toLocaleString()}</p>
         </div>
 
-        <Link
-          href="/recipes"
-          className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-        >
-          Back to Recipes
-        </Link>
+        <div className="inline-flex">
+          <Link
+            href="/recipes"
+            className="whitespace-nowrap leading-8 bg-blue-600 text-white px-4 py-2 mr-4 text-nowrap rounded hover:bg-blue-600 transition"
+          >
+            Back to Recipes
+          </Link>
+          <button
+            className="w-full bg-red-600 p-3 rounded text-white hover:bg-red-700 transition disabled:opacity-50"
+            type="submit"
+          >
+            Delete Recipe
+          </button>
+        </div>
       </div>
     </div>
   );

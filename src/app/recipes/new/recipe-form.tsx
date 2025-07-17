@@ -35,6 +35,8 @@ const NewRecipeForm = () => {
           name="name"
           placeholder="Name"
           autoComplete="off"
+          maxLength={45}
+          required
         ></input>
         <input
           className="w-full border border-gray-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -42,27 +44,34 @@ const NewRecipeForm = () => {
           name="description"
           placeholder="Description"
           autoComplete="off"
+          maxLength={100}
+          required
         ></input>
         <textarea
           className="w-full border border-gray-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
           name="ingredients"
           placeholder="List the ingredients needed to make this dish"
           rows={4}
+          maxLength={200}
+          required
         ></textarea>
         <textarea
           className="w-full border border-gray-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
           name="instructions"
           placeholder="Describe the steps to make this dish"
           rows={4}
+          maxLength={300}
+          required
         ></textarea>
         <select
           className="w-full border border-gray-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-700"
           name="timeLength"
           defaultValue="30 mins or less"
+          required
         >
-          <option value="short"> {">"} 30 minutes</option>
-          <option value="medium">{">"} 1 hour</option>
-          <option value="long">{">"} 2 hours</option>
+          <option value="short"> {"<"} 30 minutes</option>
+          <option value="medium">{"<"} 1 hour</option>
+          <option value="long">{">"} 1 hour</option>
         </select>
         <button
           className="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition disabled:opacity-50"

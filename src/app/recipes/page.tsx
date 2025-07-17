@@ -16,9 +16,20 @@ const RecipesPage = async () => {
 
   return (
     <div className="min-h-screen bg-blue-50 p-8">
-      <h1 className="text-3xl font-bold text-blue-600 mb-8 text-center">
-        Recipes
-      </h1>
+      <div className="flex justify-center mx-auto">
+        <div className="inline-flex">
+          <Link
+            href="/search"
+            className="text-3xl text-blue-600 px-4 mb-8 text-center rounded-lg hover:bg-gray-200 hover:font-bold"
+          >
+            Search
+          </Link>
+          <span className="text-3xl text-blue-600 px-2">|</span>
+          <h1 className="text-3xl font-bold text-blue-600 px-4 mb-8 text-center hover:font-bold">
+            Recipes
+          </h1>
+        </div>
+      </div>
       {recipes.length == 0 ? (
         <p className="text-center text-gray-600">No Recipes Yet</p>
       ) : (
